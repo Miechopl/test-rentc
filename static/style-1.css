@@ -160,6 +160,45 @@ body {
     .header .col.sort-section {
       text-align: right; }
 
+.search-section {
+  position: relative;
+  box-sizing: border-box; }
+  .search-section form {
+    padding: 0;
+    margin: 0; }
+  .search-section input.search-input {
+    width: 100%;
+    background: #fff;
+    padding: 0 50px 0 18px;
+    height: 47px;
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 1px 1px 0 #fafafa;
+    outline: none;
+    color: #262626;
+    position: relative;
+    z-index: 1; }
+  .search-section button.search-submit {
+    background: transparent;
+    border: none;
+    width: 50px;
+    cursor: pointer;
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    text-align: center; }
+    .search-section button.search-submit i {
+      vertical-align: super; }
+    .search-section button.search-submit:hover {
+      color: #50ae48; }
+    .search-section button.search-submit span {
+      display: none; }
+
 .tiles-list-container ul.tiles-list {
   list-style: none;
   padding: 0;
