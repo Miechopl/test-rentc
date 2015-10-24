@@ -199,6 +199,32 @@ body {
     .search-section button.search-submit span {
       display: none; }
 
+.sort-section .sort-label {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px; }
+.sort-section a.sort-button-dropdown {
+  background: #fff;
+  padding: 0 19px;
+  height: 47px;
+  line-height: 47px;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid #f4f4f4;
+  border-radius: 5px;
+  box-shadow: 1px 1px 0 #fafafa;
+  color: #5d5d5d;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 12px; }
+  .sort-section a.sort-button-dropdown:after {
+    content: "\25BC";
+    display: inline-block;
+    float: right;
+    color: #a9a9a9;
+    padding: 0 0 0 10px;
+    font-size: 10px; }
+
 .tiles-list-container ul.tiles-list {
   list-style: none;
   padding: 0;
