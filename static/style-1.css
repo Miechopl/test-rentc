@@ -1,3 +1,230 @@
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+img, legend {
+  border: 0; }
 
+legend, td, th {
+  padding: 0; }
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+audio, canvas, progress, video {
+  display: inline-block;
+  vertical-align: baseline; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden], template {
+  display: none; }
+
+a {
+  background-color: transparent; }
+
+a:active, a:hover {
+  outline: 0; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b, optgroup, strong {
+  font-weight: 700; }
+
+dfn {
+  font-style: italic; }
+
+h1 {
+  font-size: 2em;
+  margin: .67em 0; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+small {
+  font-size: 80%; }
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -.5em; }
+
+sub {
+  bottom: -.25em; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+figure {
+  margin: 1em 40px; }
+
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+pre, textarea {
+  overflow: auto; }
+
+code, kbd, pre, samp {
+  font-family: monospace,monospace;
+  font-size: 1em; }
+
+button, input, optgroup, select, textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0; }
+
+button {
+  overflow: visible; }
+
+button, select {
+  text-transform: none; }
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+button[disabled], html input[disabled] {
+  cursor: default; }
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+input {
+  line-height: normal; }
+
+input[type=checkbox], input[type=radio] {
+  box-sizing: border-box;
+  padding: 0; }
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  height: auto; }
+
+input[type=search] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box; }
+
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: .35em .625em .75em; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.clear {
+  clear: both; }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  color: #262626;
+  font-size: 14px;
+  line-height: 22px; }
+
+.main {
+  width: 100%; }
+
+.wrapper {
+  max-width: 881px;
+  margin: auto;
+  padding: 25px 23px; }
+
+.header {
+  height: 48px;
+  margin-bottom: 40px; }
+  .header .col {
+    width: calc(50% - 10px);
+    float: left; }
+    .header .col:nth-child(2n+2) {
+      float: right; }
+    .header .col.sort-section {
+      text-align: right; }
+
+.tiles-list-container {
+  overflow: hidden; }
+  .tiles-list-container ul.tiles-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: block; }
+
+li.tile {
+  width: calc(50% - 10px);
+  height: 193px;
+  overflow: hidden;
+  position: relative;
+  float: left; }
+  li.tile:nth-child(2n+2) {
+    float: right; }
+  li.tile section.tile-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 48px;
+    overflow: hidden; }
+    li.tile section.tile-content img {
+      float: left;
+      margin: 25px 42px 25px 25px; }
+  li.tile footer.tile-footer {
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    font-size: 16px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden; }
+
+.tile-rating {
+  float: left;
+  display: block; }
+  .tile-rating .tile-stars-container {
+    width: 95px;
+    height: 15px;
+    display: inline-block;
+    position: relative;
+    background: url(../images/stars.png) repeat-x left top;
+    z-index: 1; }
+    .tile-rating .tile-stars-container .tile-stars {
+      height: 15px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background: url(../images/stars.png) repeat-x left bottom;
+      z-index: 2; }
+      .tile-rating .tile-stars-container .tile-stars span {
+        display: none; }
+  .tile-rating .tile-review-count {
+    display: inline-block; }
+
+.tile-stats {
+  display: inline-block;
+  float: right;
+  text-align: right; }
 
 /*# sourceMappingURL=style-1.css.map */
