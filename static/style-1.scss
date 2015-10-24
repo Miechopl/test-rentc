@@ -40,7 +40,6 @@ body {
 }
 
 .tiles-list-container {
-  overflow: hidden;
 
   ul.tiles-list {
     list-style: none;
@@ -53,10 +52,16 @@ body {
 
 li.tile {
   width: calc(50% - 10px);
+  margin-bottom: 23px;
   height: 193px;
   overflow: hidden;
   position: relative;
   float: left;
+  border: 1px solid #f4f4f4;
+  border-radius: 5px;
+  box-shadow: 1px 1px 0 #fafafa;
+  cursor: pointer;
+  box-sizing: border-box;
 
   &:nth-child(2n+2) {
     float: right;
@@ -69,10 +74,25 @@ li.tile {
     right: 0;
     bottom: 48px;
     overflow: hidden;
+    padding-top: 25px;
 
     img {
       float: left;
-      margin: 25px 42px 25px 25px;
+      margin: 0 42px 25px 25px;
+    }
+    h2 {
+      margin: 0;
+      padding: 0;
+      font-weight: normal;
+    }
+    addr.tile-contact-details {
+      font-size: 12px;
+      line-height: 18px;
+      margin-top: 22px;
+
+      i {
+        margin-right: 5px;
+      }
     }
   }
 
@@ -87,6 +107,27 @@ li.tile {
     right: 0;
     bottom: 0;
     overflow: hidden;
+    padding: 0 20px;
+    box-sizing: border-box;
+    background: #fafafa;
+    border-top: 1px solid #f3f3f3;
+    box-shadow: 0 1px 0 inset #f7f7f7;
+  }
+
+  &:hover {
+    border: 2px solid #55b14d;
+
+    section.tile-content {
+      top: -1px;
+      right: -1px;
+      left: -1px;
+      bottom: 47px;
+    }
+
+    footer.tile-footer {
+      bottom: -1px;
+      padding: 0 19px;
+    }
   }
 }
 
@@ -98,6 +139,7 @@ li.tile {
     width: 95px;
     height: 15px;
     display: inline-block;
+    margin-right: 10px;
     position: relative;
     background: url(../images/stars.png) repeat-x left top;
     z-index: 1;
@@ -125,4 +167,13 @@ li.tile {
   display: inline-block;
   float: right;
   text-align: right;
+
+  span {
+    margin-left: 21px;
+
+    i {
+      color: #50ae48;
+      margin-right: 7px;
+    }
+  }
 }
