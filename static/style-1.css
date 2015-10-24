@@ -159,6 +159,14 @@ body {
       float: right; }
     .header .col.sort-section {
       text-align: right; }
+      @media (max-width: 840px) {
+        .header .col.sort-section {
+          text-align: left; } }
+    @media (max-width: 840px) {
+      .header .col {
+        width: 100%;
+        margin: 10px 0;
+        float: none; } }
 
 .search-section {
   position: relative;
@@ -244,6 +252,11 @@ li.tile {
   box-shadow: 1px 1px 0 #fafafa;
   cursor: pointer;
   box-sizing: border-box; }
+  @media (max-width: 840px) {
+    li.tile {
+      width: 100%;
+      height: auto;
+      float: none; } }
   li.tile:nth-child(2n+2) {
     float: right; }
   li.tile section.tile-content {
@@ -254,17 +267,37 @@ li.tile {
     bottom: 48px;
     overflow: hidden;
     padding-top: 25px; }
+    @media (max-width: 840px) {
+      li.tile section.tile-content {
+        position: static;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        padding-bottom: 60px; } }
     li.tile section.tile-content img {
       float: left;
       margin: 0 42px 25px 25px; }
+      @media (max-width: 410px) {
+        li.tile section.tile-content img {
+          float: none;
+          margin: 0 auto 40px;
+          display: block; } }
     li.tile section.tile-content h2 {
       margin: 0;
       padding: 0;
       font-weight: normal; }
+      @media (max-width: 410px) {
+        li.tile section.tile-content h2 {
+          padding: 0 20px; } }
     li.tile section.tile-content addr.tile-contact-details {
+      display: block;
       font-size: 12px;
       line-height: 18px;
       margin-top: 22px; }
+      @media (max-width: 410px) {
+        li.tile section.tile-content addr.tile-contact-details {
+          padding: 0 20px; } }
       li.tile section.tile-content addr.tile-contact-details i {
         margin-right: 5px; }
   li.tile footer.tile-footer {
@@ -290,6 +323,18 @@ li.tile {
       right: -1px;
       left: -1px;
       bottom: 47px; }
+      @media (max-width: 840px) {
+        li.tile:hover section.tile-content {
+          position: static;
+          top: auto;
+          left: auto;
+          right: auto;
+          bottom: auto;
+          padding-bottom: 58px; } }
+      @media (max-width: 410px) {
+        li.tile:hover section.tile-content h2,
+        li.tile:hover section.tile-content addr.tile-contact-details {
+          padding: 0 19px; } }
     li.tile:hover footer.tile-footer {
       bottom: -1px;
       padding: 0 19px; }
