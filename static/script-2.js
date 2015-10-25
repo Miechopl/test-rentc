@@ -1,3 +1,6 @@
+var monthsArray = ["", "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"];
+var weekDaysArray = ["pon", "wt", "śr", "czw", "pt", "sob", "nie"];
+
 var cars = [
   {
     name: "Chevrolet Spark",
@@ -138,9 +141,13 @@ $(function() {
   context.moveTo(0, 0);
   context.fillStyle = "#fafafa";
   context.fillRect(1, 0, 335, 109);
+  context.font = "18px Arial";
 
   $.each(cars, function(i, obj) {
+    context.fillStyle = "#fafafa";
     context.fillRect(1, parseInt(111 + i*cellHeight), 335, cellHeight-1);
+    context.fillStyle = "#000";
+    context.fillText(obj.name, 5, parseInt(111 + i*cellHeight)+30);
   });
 
   var firstMonth = 4;
@@ -169,20 +176,45 @@ $(function() {
   var monthStartDrawing = 336;
   var dayStartDrawing = 336;
   var dd;
-  for (dd = startDate; dd < endDate; dd.setDate(d.getDate() + 1)) {
+  for (dd = startDate; dd < endDate; dd.setDate(dd.getDate() + 1)) {
+    context.fillStyle = "#fafafa";
     context.fillRect(parseInt(dayStartDrawing+1), 38, cellWidth-1, 36);
     context.fillRect(parseInt(dayStartDrawing+1), 75, cellWidth-1, 34);
-    dayStartDrawing = parseInt(dayStartDrawing+cellWidth);
-    if (d.getMonth() != month) {
+
+    context.font = "18px Arial";
+    if (dd.getDay()==6)
+      context.fillStyle = "#ff0000";
+    else
+      context.fillStyle = "#000000";
+    context.textAlign = "center";
+    context.fillText(dd.getDate(), (dayStartDrawing+parseInt(cellWidth/2)), 64);
+    context.fillText(weekDaysArray[dd.getDay()], (dayStartDrawing+parseInt(cellWidth/2)), 97);
+
+    if (dd.getMonth() != month) {
+      context.fillStyle = "#fafafa";
       context.fillRect(parseInt(monthStartDrawing+1), 0, parseInt(monthDays*cellWidth-1), 36);
+      
+      context.font = "18px Arial";
+      context.fillStyle = "#000000";
+      context.textAlign = "center";
+      context.fillText(monthsArray[dd.getMonth()], parseInt(monthStartDrawing+1+parseInt(monthDays*(cellWidth-1)/2)), 26);
+
       monthStartDrawing = parseInt(monthStartDrawing + monthDays*cellWidth);
       month = dd.getMonth();
       monthDays=0;
-    }
+    } 
     monthDays++;
+    dayStartDrawing = parseInt(dayStartDrawing+cellWidth);
   }
-  if (d.getMonth() != month) {
+  if (dd.getMonth() != month) {
+    context.fillStyle = "#fafafa";
     context.fillRect(parseInt(monthStartDrawing+1), 0, parseInt(monthDays*cellWidth-1), 36);
+    context.font = "18px Arial";
+    context.fillStyle = "#000000";
+    context.textAlign = "center";
+    context.fillText(monthsArray[dd.getMonth()], parseInt(monthStartDrawing+(monthDays*(cellWidth-1)/2)), 26);
+
+
     monthStartDrawing = parseInt(monthStartDrawing + monthDays*cellWidth);
     month = dd.getMonth();
     monthDays=0;
