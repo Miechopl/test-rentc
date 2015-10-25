@@ -31,72 +31,32 @@ var cars = [
 var rents = [
   {
     name: "Jan Kowalski",
-    dateStart: {
-      year: 2015,
-      month: 7,
-      day: 24
-    },
-    dateEnd: {
-      year: 2015,
-      month: 7,
-      day: 26
-    },
-    carId: 3
+    dateStart: "2015-07-24T00:00:00.000Z",
+    dateEnd: "2015-07-26T00:00:00.000Z",
+    carId: 5
   },
   {
     name: "Jan Kowalski",
-    dateStart: {
-      year: 2015,
-      month: 10,
-      day: 24
-    },
-    dateEnd: {
-      year: 2015,
-      month: 10,
-      day: 26
-    },
-    carId: 3
+    dateStart: "2015-10-24T00:00:00.000Z",
+    dateEnd: "2015-10-26T00:00:00.000Z",
+    carId: 4
   },
   {
     name: "Jan Nowak",
-    dateStart: {
-      year: 2015,
-      month: 10,
-      day: 27
-    },
-    dateEnd: {
-      year: 2015,
-      month: 10,
-      day: 28
-    },
+    dateStart: "2015-10-26T00:00:00.000Z",
+    dateEnd: "2015-10-26T00:00:00.000Z",
     carId: 3
   },
   {
     name: "Paweł Kowalski",
-    dateStart: {
-      year: 2015,
-      month: 10,
-      day: 23
-    },
-    dateEnd: {
-      year: 2015,
-      month: 10,
-      day: 25
-    },
+    dateStart: "2015-10-23T00:00:00.000Z",
+    dateEnd: "2015-10-25T00:00:00.000Z",
     carId: 2
   },
   {
     name: "Zbigniew Boniek",
-    dateStart: {
-      year: 2015,
-      month: 10,
-      day: 22
-    },
-    dateEnd: {
-      year: 2015,
-      month: 10,
-      day: 29
-    },
+    dateStart: "2015-10-22T00:00:00.000Z",
+    dateEnd: "2015-10-29T00:00:00.000Z",
     carId: 1
   }
 ];
@@ -104,6 +64,20 @@ var rents = [
 
 
 $(function() {
+  var drawRents = function() {
+    var barWidth,dstart,dend,days,y,car;
+    $.each(rents, function(i, obj) {
+      context.fillStyle = "#49b950";
+      dstart = new Date(obj.dateStart);
+      dend = new Date(obj.dateEnd);
+      days = Math.round((dend-dstart)/(1000*60*60*24)) || 1;
+      barWidth =  days * cellWidth;
+      car = $.grep(cars, function(e){ if (e.id==obj.carId) return e; });
+      y = car[0].y;
+      context.fillRect(400, y, barWidth-1, cellHeight-1);
+    });
+  };
+
   var draw = function () {
     context.clearRect(0, 0, cCanvas.width, cCanvas.height);
 
@@ -192,11 +166,14 @@ $(function() {
       context.fillRect(1, parseInt(111-canvasOffsetY + i*cellHeight), 335, cellHeight-1);
       context.fillStyle = "#000";
       context.fillText(obj.name, 5, parseInt(111-canvasOffsetY + i*cellHeight)+30);
+      obj["y"] = parseInt(111 - canvasOffsetY + i*cellHeight);
     });
 
     context.moveTo(0, 0);
     context.fillStyle = "#fafafa";
     context.fillRect(1, 0, 335, 109);
+
+    drawRents();
   };
 
   var cWidth = parseInt($(window).width());
